@@ -9,14 +9,12 @@ export default function useInputRef () {
 
   const emailChangeHandler=(e:ChangeEvent<HTMLInputElement>)=>{
     if(emailRef.current) {
-      emailRef.current.value=e.target.value;
       if(emailRef.current.value.includes('@')) setEmailvalid(true);
       else setEmailvalid(false);
     }
   }
   const pwChangeHandler=(e:ChangeEvent<HTMLInputElement>)=>{
     if(pwRef.current) {
-      pwRef.current.value=e.target.value;
       if(pwRef.current.value.length>=8) setPwValid(true);
       else setPwValid(false);
     }
