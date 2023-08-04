@@ -5,7 +5,8 @@ export default function SignupForm() {
   const { emailRef, emailChangeHandler, pwRef, pwChangeHandler, pass } =
     useInputRef();
 
-    const signupHanlder=()=>{
+    const signupHanlder=(e:React.MouseEvent<HTMLButtonElement>)=>{
+      e.preventDefault();
       if(emailRef.current&&pwRef.current){
         const data={'email':emailRef.current.value,'password':pwRef.current.value};
         sendData('auth/signup','post',data)

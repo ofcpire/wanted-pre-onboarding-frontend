@@ -1,17 +1,18 @@
-import {useEffect} from 'react';
+import { useEffect } from 'react';
 import { getToken } from '../lib/utils/token';
 import { useNavigate } from 'react-router-dom';
-import SignupForm from "../components/auth/SignupForm"
+import SignupForm from '../components/auth/SignupForm';
 
 export default function SignupPage() {
-  const navigate=useNavigate();
+  const navigate = useNavigate();
 
-  useEffect(()=>{
-    if(getToken()) navigate('/todo');
-  },[])
+  useEffect(() => {
+    if (getToken()) navigate('/todo');
+  }, []);
 
-  return(
-    <SignupForm/>
-  )
-
+  return (
+    <main>
+      <SignupForm />
+    </main>
+  );
 }

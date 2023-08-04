@@ -3,12 +3,14 @@ import { sendData } from '../../lib/api/api';
 import { useNavigate} from 'react-router-dom';
 import { setToken } from '../../lib/utils/token';
 
+
 export default function SigninForm() {
   const navigate=useNavigate();
   const { emailRef, emailChangeHandler, pwRef, pwChangeHandler, pass } =
     useInputRef();
 
-    const loginHanlder=()=>{
+    const loginHanlder=(e:React.MouseEvent<HTMLButtonElement>)=>{
+      e.preventDefault();
       if(emailRef.current&&pwRef.current){
         const data={'email':emailRef.current.value,'password':pwRef.current.value};
         sendData('auth/signin','post',data)
@@ -21,7 +23,7 @@ export default function SigninForm() {
     }
 
   return (
-    <main>
+    <form>
       <label htmlFor='email'>이메일</label>
       <input
         data-testid='email-input'
@@ -44,6 +46,6 @@ export default function SigninForm() {
         >
         로그인
       </button>
-    </main>
+    </form>
   );
 }

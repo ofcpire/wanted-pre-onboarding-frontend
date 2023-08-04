@@ -5,7 +5,8 @@ import { sendData } from "../../lib/api/api";
 export default function TodoMain({ todos, getNewTodos }: TodoMainProps) {
   const todoInputRef = useRef<HTMLInputElement | null>(null);
 
-  const createTodoHandler = async () => {
+  const createTodoHandler = async (e:React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
     if (todoInputRef.current) {
       const data = { todo: todoInputRef.current.value };
       sendData("todos", "post", data)
@@ -18,15 +19,16 @@ export default function TodoMain({ todos, getNewTodos }: TodoMainProps) {
   };
 
   return (
-    <main>
-      <div>
+    <section>
+      <h1>MY TODOS</h1>
+      <form>
         <input data-testid="new-todo-input" ref={todoInputRef} />
         <button
           data-testid="new-todo-add-button"
           onClick={createTodoHandler}>
           추가
         </button>
-      </div>
+      </form>
       <ul>
         {todos.map((todoObj) => (
           <TodoItem
@@ -36,6 +38,6 @@ export default function TodoMain({ todos, getNewTodos }: TodoMainProps) {
           />
         ))}
       </ul>
-    </main>
+    </section>
   );
 }

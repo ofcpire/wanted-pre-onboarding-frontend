@@ -21,5 +21,9 @@ export default function TodoPage() {
       });
   };
 
-  return <TodoMain todos={todos} getNewTodos={getNewTodos} />;
+  return (
+  <main>
+    <TodoMain todos={todos} getNewTodos={getNewTodos} />
+  </main>
+  )
 }
