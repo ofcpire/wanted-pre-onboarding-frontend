@@ -5,7 +5,7 @@ create-react-app을 통해 제작한 Todo 사이트입니다. 로그인, 회원�
 이세환입니다.
 ## 배포 주소
 데모 영상은 배포 주소로 대체합니다.
-[todo-app-ofcpire.netlify.app](todo-app-ofcpire.netlify.app)
+[https://todo-app-ofcpire.netlify.app](https://todo-app-ofcpire.netlify.app)
 ## 프로젝트 실행 방법
 ```
 git clone https://github.com/ofcpire/wanted-pre-onboarding-frontend.git
