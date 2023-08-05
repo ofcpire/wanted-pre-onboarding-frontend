@@ -9,6 +9,7 @@ create-react-app을 통해 제작한 Todo 사이트입니다. 로그인, 회원�
 ## 프로젝트 실행 방법
 ```
 git clone https://github.com/ofcpire/wanted-pre-onboarding-frontend.git
+cd wanted-pre-onboarding-frontend
 npm install
 npm start
 ```
