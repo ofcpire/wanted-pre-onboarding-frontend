@@ -48,6 +48,7 @@ export default function SigninForm() {
         <Input
           data-testid='password-input'
           id='password'
+          type='password'
           ref={pwRef}
           onChange={pwChangeHandler}
         />
