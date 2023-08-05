@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { getToken } from '../utils/token';
-const url = process.env.REACT_APP_API_URL;
+const url = 'https://www.pre-onboarding-selection-task.shop';
 
 const headers:AxiosHeaders={
   'Content-Type': 'application/json'
