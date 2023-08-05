@@ -1,7 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
-  * {margin: 0;padding: 0;border: none;background: none;font-size: 100%;font-family: 'Noto Sans KR', sans-serif;box-sizing: border-box;-webkit-tap-highlight-color: transparent;}
+  * {margin: 0;padding: 0;border: none;background: none;font-size: 100%;font-family: 'Orbit', sans-serif;box-sizing: border-box;-webkit-tap-highlight-color: transparent;}
   ol,ul {list-style: none;} 
   em {font-size: normal;} 
   img {vertical-align: top;outline: none;}
@@ -26,7 +26,7 @@ export const GlobalStyle = createGlobalStyle`
   a:active {background: none;color:inherit;}
   body {
     overflow-x: hidden; line-height: 1;
-    font-family: 'Noto Sans KR', sans-serif, 
+    font-family: 'Orbit', sans-serif, 
     -apple-system, 
     BlinkMacSystemFont, 
     system-ui, 
@@ -38,5 +38,8 @@ export const GlobalStyle = createGlobalStyle`
     'Malgun Gothic', sans-serif;
     font-size: 14px;
     color: var(--black);
+  }
+  button {
+    cursor: pointer;
   }
 `;
