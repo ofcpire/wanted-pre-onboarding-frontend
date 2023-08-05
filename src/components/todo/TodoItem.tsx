@@ -48,7 +48,6 @@ export default function TodoItem({ todoObj, getNewTodos }: TodoItemProps) {
       <label>
         <CheckboxInput
           type="checkbox"
-          id="todo-checkbox"
           defaultChecked={isChecked}
           onClick={checkTodoHandler}
         />
