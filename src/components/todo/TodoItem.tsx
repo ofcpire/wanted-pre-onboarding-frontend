@@ -1,5 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { sendData, deleteData } from "../../lib/api/api";
+import { Button, Input } from "../../styles/mainStyle";
+import { CheckboxInput } from "../../styles/todoStyle";
 
 export default function TodoItem({ todoObj, getNewTodos }: TodoItemProps) {
   const [isEdit, setIsEdit] = useState(false);
@@ -44,37 +46,39 @@ export default function TodoItem({ todoObj, getNewTodos }: TodoItemProps) {
   return (
     <li>
       <label>
-        <input
+        <CheckboxInput
           type="checkbox"
+          id="todo-checkbox"
           defaultChecked={isChecked}
           onClick={checkTodoHandler}
         />
-        {!isEdit && <span>{todoObj.todo}</span>}
-      </label>
-      {isEdit ? (
-        <>
-          <input
+        {isEdit ? <Input
             ref={todoInputRef}
             data-testid="modify-input"
             defaultValue={todoObj.todo}
-          />
-          <button data-testid="submit-button" onClick={updateTodoHandler}>
+          /> : <span className="todo-title">{todoObj.todo}</span>}
+      </label>
+      <div className='todo-button-container'>
+      {isEdit ? (
+        <>
+          <Button data-testid="submit-button" onClick={updateTodoHandler}>
             제출
-          </button>
-          <button data-testid="cancel-button" onClick={editTodoHandler}>
+          </Button>
+          <Button data-testid="cancel-button" onClick={editTodoHandler}>
             취소
-          </button>
+          </Button>
         </>
       ) : (
         <>
-          <button data-testid="modify-button" onClick={editTodoHandler}>
+          <Button data-testid="modify-button" onClick={editTodoHandler}>
             수정
-          </button>
-          <button data-testid="delete-button" onClick={deleteTodoHandler}>
+          </Button>
+          <Button data-testid="delete-button" onClick={deleteTodoHandler}>
             삭제
-          </button>
+          </Button>
         </>
       )}
+      </div>
     </li>
   );
 }

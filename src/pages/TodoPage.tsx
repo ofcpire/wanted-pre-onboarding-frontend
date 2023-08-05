@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { getToken } from '../lib/utils/token';
 import TodoMain from '../components/todo/TodoMain';
 import { getData } from '../lib/api/api';
+import { Main } from '../styles/mainStyle';
 
 export default function TodoPage() {
   const navigate = useNavigate();
@@ -22,8 +23,8 @@ export default function TodoPage() {
   };
 
   return (
-  <main>
+  <Main>
     <TodoMain todos={todos} getNewTodos={getNewTodos} />
-  </main>
+  </Main>
   )
 }

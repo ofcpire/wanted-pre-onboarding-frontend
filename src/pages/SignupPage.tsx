@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { getToken } from '../lib/utils/token';
 import { useNavigate } from 'react-router-dom';
 import SignupForm from '../components/auth/SignupForm';
+import { Main } from '../styles/mainStyle';
 
 export default function SignupPage() {
   const navigate = useNavigate();
@@ -11,8 +12,8 @@ export default function SignupPage() {
   }, []);
 
   return (
-    <main>
+    <Main>
       <SignupForm />
-    </main>
+    </Main>
   );
 }
