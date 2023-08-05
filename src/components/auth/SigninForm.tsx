@@ -22,7 +22,7 @@ export default function SigninForm() {
           setToken(data.access_token);
           navigate('/todo');
         })
-        .catch(() => console.log('login failed'));
+        .catch(() => alert('로그인에 실패했습니다.'));
     }
   };
 

@@ -20,7 +20,7 @@ export default function SignupForm() {
         .then(() => {
           alert('회원가입 되었습니다.');
         })
-        .catch(() => console.log('signup failed'));
+        .catch(() => alert('회원가입에 실패했습니다.'));
     }
   };
 
