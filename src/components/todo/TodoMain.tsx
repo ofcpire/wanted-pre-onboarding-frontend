@@ -21,7 +21,10 @@ export default function TodoMain({ todos, getNewTodos }: TodoMainProps) {
           if (todoInputRef.current) todoInputRef.current.value = '';
           getNewTodos();
         })
-        .catch(() => console.log('failed to post todo'));
+        .catch((err) => {
+          if(err.response.data.message) alert(err.response.data.message);
+          else alert('Todo 추가에 실패했습니다.')
+      });
     }
   };
 

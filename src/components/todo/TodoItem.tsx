@@ -23,7 +23,10 @@ export default function TodoItem({ todoObj, getNewTodos }: TodoItemProps) {
       }).then(() => {
         getNewTodos();
         setIsEdit(false);
-      });
+      }).catch((err) => {
+        if(err.response.data.message) alert(err.response.data.message);
+        else alert('Todo 수정에 실패했습니다.')
+    });
     }
   };
 
@@ -34,13 +37,19 @@ export default function TodoItem({ todoObj, getNewTodos }: TodoItemProps) {
     }).then(() => {
       getNewTodos();
       setIsChecked(!isChecked);
-    });
+    }).catch((err) => {
+      if(err.response.data.message) alert(err.response.data.message);
+      else alert('Todo 체크에 실패했습니다.')
+  });
   };
 
   const deleteTodoHandler = () => {
     deleteData(`todos/${todoObj.id}`)
       .then(() => getNewTodos())
-      .catch(() => console.log("deleteTodo Fail"));
+      .catch((err) => {
+        if(err.response.data.message) alert(err.response.data.message);
+        else alert('Todo 삭제에 실패했습니다.')
+    });
   };
 
   return (
