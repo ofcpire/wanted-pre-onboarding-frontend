@@ -1,46 +1,66 @@
-# Getting Started with Create React App
+# 원티드 프리온보딩 프론트엔드 사전과제
+## 개요
+create-react-app을 통해 제작한 Todo 사이트입니다. 로그인, 회원가입, CRUD 기능이 있습니다.
+## 지원자 명
+이세환입니다.
+## 배포 주소
+데모 영상은 배포 주소로 대체합니다.
+[todo-app-ofcpire.netlify.app](todo-app-ofcpire.netlify.app)
+## 프로젝트 실행 방법
+```
+git clone https://github.com/ofcpire/wanted-pre-onboarding-frontend.git
+npm install
+npm start
+```
+## 프로젝트 구조
+```
+src  
+ ┣ @types  
+ ┃ ┗ index.d.ts  
+ ┣ components  
+ ┃ ┣ auth  
+ ┃ ┃ ┣ SigninForm.tsx  
+ ┃ ┃ ┗ SignupForm.tsx  
+ ┃ ┗ todo  
+ ┃ ┃ ┣ TodoItem.tsx  
+ ┃ ┃ ┗ TodoMain.tsx  
+ ┣ hooks  
+ ┃ ┗ useInputRef.tsx  
+ ┣ lib  
+ ┃ ┣ api  
+ ┃ ┃ ┗ api.tsx  
+ ┃ ┗ utils  
+ ┃ ┃ ┗ token.tsx  
+ ┣ pages  
+ ┃ ┣ IndexPage.tsx  
+ ┃ ┣ SigninPage.tsx  
+ ┃ ┣ SignupPage.tsx  
+ ┃ ┗ TodoPage.tsx  
+ ┣ styles  
+ ┃ ┣ authStyle.tsx  
+ ┃ ┣ globalStyle.tsx  
+ ┃ ┣ mainStyle.tsx  
+ ┃ ┗ todoStyle.tsx  
+ ┣ App.tsx  
+ ┗ index.tsx
+```
+@types : 프로젝트 전반에 사용되는 type, interface를 정리합니다.
+components : 각 페이지에 사용될 하위 컴포넌트들입니다.
+hooks : React custom hook을 위한 폴더입니다.
+lib : 프로젝트에서 사용되는 함수들을 정리합니다.
+┗api : API 요청용 함수 폴더입니다.
+┗utils : 일반 함수 폴더입니다.
+pages : 라우터에서 직접적으로 호출되는 페이지 컴포넌트들입니다.
+styles : styled-components들을 정리합니다.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 프로젝트 가이드라인
+커밋에는 gitmoji를 사용합니다.
 
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 프로젝트 기술 스택
+- React
+- Typescript
+- HTML
+- CSS
+- Axios
+- React-router-dom
+- styled-components
