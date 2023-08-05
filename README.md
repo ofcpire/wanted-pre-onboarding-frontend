@@ -44,14 +44,16 @@ src
  ┣ App.tsx  
  ┗ index.tsx
 ```
-@types : 프로젝트 전반에 사용되는 type, interface를 정리합니다.
-components : 각 페이지에 사용될 하위 컴포넌트들입니다.
-hooks : React custom hook을 위한 폴더입니다.
-lib : 프로젝트에서 사용되는 함수들을 정리합니다.
-┗api : API 요청용 함수 폴더입니다.
-┗utils : 일반 함수 폴더입니다.
-pages : 라우터에서 직접적으로 호출되는 페이지 컴포넌트들입니다.
-styles : styled-components들을 정리합니다.
+- **@types** : 프로젝트 전반에 사용되는 type, interface를 정리합니다.
+- **components** : 각 페이지에 사용될 하위 컴포넌트들입니다.
+	- auth : 로그인 및 회원가입 페이지 컴포넌트들입니다.
+	- todo : Todo 페이지 컴포넌트들입니다.
+- **hooks** : React custom hook을 위한 폴더입니다.
+- **lib** : 프로젝트에서 사용되는 함수들을 정리합니다.
+	- api : API 요청용 함수 폴더입니다.
+	- utils : 일반 함수 폴더입니다.
+- **pages** : 라우터에서 직접적으로 호출되는 페이지 컴포넌트들입니다.
+- **styles** : styled-components들을 정리합니다.
 
 ## 프로젝트 가이드라인
 커밋에는 gitmoji를 사용합니다.
