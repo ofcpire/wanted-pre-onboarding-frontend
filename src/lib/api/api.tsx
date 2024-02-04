@@ -1,24 +1,22 @@
 import axios from 'axios';
 import { getToken } from '../utils/token';
-const url = 'https://www.pre-onboarding-selection-task.shop';
+const url = process.env.REACT_APP_API_URL;
 
-const headers:AxiosHeaders={
-  'Content-Type': 'application/json'
+const headers: AxiosHeaders = {
+  'Content-Type': 'application/json',
 };
 
-const api=axios.create({
-  baseURL:url
-})
+const api = axios.create({
+  baseURL: url,
+});
 
-api.interceptors.request.use(
-  (config)=>{
-    const authToken=getToken();
-    if (authToken) {
-      config.headers['Authorization'] = `Bearer ${authToken}`;
-    }
-    return config;
+api.interceptors.request.use((config) => {
+  const authToken = getToken();
+  if (authToken) {
+    config.headers['Authorization'] = `Bearer ${authToken}`;
   }
-)
+  return config;
+});
 
 export const getData = async (endpoint: string) => {
   try {
@@ -29,25 +27,24 @@ export const getData = async (endpoint: string) => {
     });
     return Promise.resolve(res.data);
   } catch (err) {
-    console.log(err)
+    console.log(err);
     return Promise.reject(err);
   }
 };
 
 export const sendData = async (
   endpoint: string,
-  method:string='post',
-  data: object={},
-  params: object={},
-  sendToken:boolean=false
+  method: string = 'post',
+  data: object = {},
+  params: object = {},
+  sendToken: boolean = false
 ) => {
-
   try {
     const res = await api({
       url: `/${endpoint}`,
       method,
       data: JSON.stringify(data),
-      headers
+      headers,
     });
     return Promise.resolve(res.data);
   } catch (err) {
@@ -56,21 +53,18 @@ export const sendData = async (
   }
 };
 
-export const deleteData=async (
-  endpoint:string
-)=>{
-
-  const headers:AxiosHeaders={};
+export const deleteData = async (endpoint: string) => {
+  const headers: AxiosHeaders = {};
 
   try {
     const res = await api({
       url: `${url}/${endpoint}`,
       method: 'delete',
-      headers
+      headers,
     });
     return Promise.resolve(res.data);
   } catch (err) {
     console.log(err);
     return Promise.reject(err);
   }
-}
+};
