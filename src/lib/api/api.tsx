@@ -58,7 +58,7 @@ export const deleteData = async (endpoint: string) => {
 
   try {
     const res = await api({
-      url: `${url}/${endpoint}`,
+      url: `/${endpoint}`,
       method: 'delete',
       headers,
     });
